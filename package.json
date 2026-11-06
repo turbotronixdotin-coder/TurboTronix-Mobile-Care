@@ -1,0 +1,10 @@
+{
+  "name": "turbotronix-mobile-care",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev:web": "pnpm --dir customer-website dev",
+    "build:web": "pnpm --dir customer-website build",
+    "lint:web": "pnpm --dir customer-website lint"
+  }
+}

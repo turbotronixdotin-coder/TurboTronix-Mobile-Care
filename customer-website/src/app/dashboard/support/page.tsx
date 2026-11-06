@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Page(){return <main><nav className="nav container"><Link className="brand" href="/"><span>TT</span><strong>TurboTronix</strong></Link><Link href="/dashboard">Dashboard</Link></nav><div className="page"><p className="eyebrow">TURBOTRONIX MOBILE CARE</p><h1>Support requests</h1><div className="panel"><p>This section is ready for live Supabase records and displays only information belonging to the signed-in customer or business staff.</p><Link className="button" href="/booking">Book a repair</Link></div></div></main>}

@@ -1,0 +1,14 @@
+import Link from 'next/link';
+
+const services = ['Display replacement','Battery replacement','Charging port replacement','Back panel replacement','Camera replacement','Water damage inspection'];
+const brands = ['Apple','Samsung','Vivo','OPPO','Realme','Redmi','POCO','OnePlus','iQOO','Motorola','Nothing','Google Pixel'];
+
+export default function Home() {
+  return <main><nav className="nav container"><Link className="brand" href="/"><span>TT</span><strong>TurboTronix</strong></Link><div><Link href="/services">Services</Link><Link href="/brands">Brands</Link><Link href="/pricing">Pricing</Link><Link href="/dashboard">Dashboard</Link></div><Link className="button small" href="/booking">Book a Repair</Link></nav>
+    <section className="hero-wrap"><div className="container hero"><div><p className="eyebrow">MOBILE REPAIR • AT YOUR DOORSTEP</p><h1>Expert Mobile Repairs at Your Doorstep</h1><p>Transparent estimates, trusted technicians and convenient home-service appointments across Hyderabad.</p><div className="actions"><Link className="button" href="/booking">Book a Repair</Link><Link className="button secondary" href="/brands">Choose your device</Link></div></div><div className="hero-art"><div className="phone"><span>✓</span></div></div></div></section>
+    <section className="container section"><div className="section-heading"><p className="eyebrow">POPULAR SERVICES</p><h2>Repairs we handle</h2></div><div className="cards">{services.map((x)=><article className="card service-card" key={x}><div className="icon">⚙</div><h3>{x}</h3><p>Final charges depend on model, quality and physical inspection.</p></article>)}</div></section>
+    <section className="section muted"><div className="container"><div className="section-heading"><p className="eyebrow">SUPPORTED DEVICES</p><h2>Leading mobile brands</h2></div><div className="brand-grid">{brands.map((brand)=><Link className="brand-chip" href={`/brands?brand=${encodeURIComponent(brand)}`} key={brand}>{brand}</Link>)}</div></div></section>
+    <section className="container section"><div className="section-heading"><p className="eyebrow">HOW IT WORKS</p><h2>Three simple steps</h2></div><div className="steps">{[['1','Choose your phone','Select the brand, model and repair issue.'],['2','Schedule a visit','Pick an address and convenient appointment slot.'],['3','Approve and repair','Get an inspection-based estimate before work begins.']].map((x)=><article key={x[0]}><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div></section>
+    <footer><div className="container footer-grid"><div><strong>TurboTronix Mobile Care</strong><p>Doorstep mobile repair in Hyderabad.</p></div><div><Link href="/contact">Contact</Link><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div><p>© {new Date().getFullYear()} TurboTronix Mobile Care</p></div></footer>
+  </main>;
+}

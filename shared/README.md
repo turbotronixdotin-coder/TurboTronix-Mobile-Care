@@ -1,0 +1,1 @@
+Shared domain contract location. Keep cross-platform business terms and status values aligned. Generate database types from Supabase rather than manually duplicating table schemas.
