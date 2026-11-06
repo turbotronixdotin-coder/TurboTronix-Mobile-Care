@@ -7,13 +7,9 @@ begin;
 -- Remove auth trigger before deleting its function.
 drop trigger if exists on_auth_user_created on auth.users;
 
--- Delete project files before removing storage buckets.
-delete from storage.objects where bucket_id in (
-  'booking-photos', 'repair-photos', 'invoices', 'product-images'
-);
-delete from storage.buckets where id in (
-  'booking-photos', 'repair-photos', 'invoices', 'product-images'
-);
+-- Storage is managed through the Supabase Storage API.
+-- Delete project files and buckets from Supabase Dashboard > Storage:
+-- Storage > each project bucket > Delete files, then Delete bucket.
 
 -- Drop project tables. Dependants are removed first through CASCADE.
 drop table if exists public.warranty_claims cascade;
